@@ -1,10 +1,10 @@
 console.log("Hello World");
-let start;
-let again;
-do {
-  do {
-    start = prompt("Would You Like To Play A Game? (yes or no)");
-    if (start == "yes") {
+
+let start = prompt("Would You Like To Play A Game? (yes or no)");
+function playGame(start) {
+  if (start == "yes"){
+    let again;
+    do { if (again == "yes" || start == "yes") {
       let gameStart = parseInt(
         prompt(
           "Choose Difficulty (1-Easy | 2-Hard | 3-Overkill | 4-What Are You Doing To Me!?!)"
@@ -41,13 +41,17 @@ do {
           alert(`${guess} IS CORRECT!`);
           console.log(
             `WAY TO GO YOU GUESSED THE NUMBER ${guess} YOU ARE SO SMART!`
-          );
-        }
-        
+          ); break;
+           }; 
       } while (rand != guess);
-    } else {
-      alert("Thanks For Stopping By");
-    } break;
-  } while (start == "yes");
-  again = prompt("Would You Like To Play Again (yes or no)");
+           again = propmt("Would You Like To Play Again? (yes or no)");
+    }  
 } while (again == "yes");
+ } else if (start != "yes") {
+    alert("Thanks For Stopping By");
+  };
+
+}
+
+
+playGame(start);
