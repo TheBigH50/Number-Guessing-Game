@@ -1,29 +1,53 @@
-console.log("Hello World")
-
-
-let gameStart = parseInt(prompt("Choose Difficulty (1-Easy|2-Hard|3-Overkill"));
-switch (true) {
-    case go == 1: 
-        var rand = Math.floor(Math.random() * 10) +1;
-        break;
-        case go == 2:
-            var rand = Math.floor(Math.random() * 100) +1;
-            break;
-            case go == 3:
-            var rand = Math.floor(Math.random() * 1000) +1;
-            break;
-            default:
-                alert(`Sorry ${go} Is Not A Valid Difficulty`);
-};
-let guess 
+console.log("Hello World");
+let start;
+let again;
 do {
-guess = parseInt(prompt("Guess A Number"));
-if (guess < rand) {
-    alert(`${guess} is too low`);
-} else if (guess > rand) {
-   alert(`${guess} is too high`);
-} else {
-   alert(`${guess} IS CORRECT!`);
-   console.log(`WAY TO GO YOU GUESSED THE NUMBER ${guess} YOU ARE SO SMART!`)
-};
-} while (rand != guess);
+  do {
+    start = prompt("Would You Like To Play A Game? (yes or no)");
+    if (start == "yes") {
+      let gameStart = parseInt(
+        prompt(
+          "Choose Difficulty (1-Easy | 2-Hard | 3-Overkill | 4-What Are You Doing To Me!?!)"
+        )
+      );
+      switch (true) {
+        case gameStart == 1:
+          var rand = Math.floor(Math.random() * 10) + 1;
+          alert("Guess A Number From 1-10");
+          break;
+        case gameStart == 2:
+          var rand = Math.floor(Math.random() * 100) + 1;
+          alert("Guess A Number From 1-100");
+          break;
+        case gameStart == 3:
+          var rand = Math.floor(Math.random() * 1000) + 1;
+          alert("Guess A Number From 1-1000");
+          break;
+        case gameStart == 4:
+          var rand = Math.floor(Math.random() * 1000000000) + 1;
+          alert("Guess A Number From 1-ONE BILLION!");
+          break;
+        default:
+          alert(`Sorry ${gameStart} Is Not A Valid Difficulty`);
+      }
+      let guess;
+      do {
+        guess = parseInt(prompt("Make A Guess!"));
+        if (guess < rand) {
+          alert(`${guess} is too low`);
+        } else if (guess > rand) {
+          alert(`${guess} is too high`);
+        } else {
+          alert(`${guess} IS CORRECT!`);
+          console.log(
+            `WAY TO GO YOU GUESSED THE NUMBER ${guess} YOU ARE SO SMART!`
+          );
+        }
+        
+      } while (rand != guess);
+    } else {
+      alert("Thanks For Stopping By");
+    } break;
+  } while (start == "yes");
+  again = prompt("Would You Like To Play Again (yes or no)");
+} while (again == "yes");
