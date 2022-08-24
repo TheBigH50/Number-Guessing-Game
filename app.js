@@ -3,7 +3,7 @@ let again;
 let start = prompt("Would You Like To Play A Game? (yes or no)");
 function playGame(start) {
   if (start == "yes") {
-        do {
+        while (true) {
       let gameStart = parseInt(
         prompt(
           "Choose Difficulty (1-Easy | 2-Hard | 3-Overkill | 4-What Are You Doing To Me!?!)"
@@ -44,16 +44,10 @@ function playGame(start) {
         }
       } while (rand != guess);
 
-      again = propmt("Would You Like To Play Again? (yes or no)");
-      function playAgain(again) {
-        if (again == "yes") {
-          return true;
-        } else {
-          return false;
+      again = prompt("Would You Like To Play Again? (yes or no)")
+      while (again == "yes") {playGame(start)} if (again != "yes") {playGame(false); break;};
         }
-      }
-    } while (playAgain(true));
-  } else if (start != "yes") {
+      } else if (start != "yes") {
     alert("Thanks For Stopping By");
   }
 }
