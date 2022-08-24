@@ -27,7 +27,9 @@ function playGame(start) {
           alert("Guess A Number From 1-ONE BILLION!");
           break;
         default:
-          alert(`Sorry Your Selection Is Not A Valid Difficulty`); playGame(start); break;
+          alert(`Sorry Your Selection Is Not A Valid Difficulty`);
+          playGame(start);
+          break;
       }
       let guess;
       do {
@@ -48,20 +50,16 @@ function playGame(start) {
 
       again = prompt("Would You Like To Play Again? (yes or no)");
       while (again == "yes") {
-        playGame(start); break;
-      } 
+        playGame(start);
+        break;
+      }
       if (again != "yes") {
-        playGame(false);        
+        playGame(false);
+        break;
       }
     }
   } else if (start != "yes") {
     alert("Thanks For Stopping By");
-    again = prompt("Are You Sure You Don't Want To Play? (yes or no)");
-      if (again == "no") {
-        playGame("yes"); 
-      } else if(again != "no") {
-        alert(`See You Next Time`);
-            }
   }
 }
 
