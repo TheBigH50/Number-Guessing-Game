@@ -27,7 +27,7 @@ function playGame(start) {
           alert("Guess A Number From 1-ONE BILLION!");
           break;
         default:
-          alert(`Sorry ${gameStart} Is Not A Valid Difficulty`);
+          alert(`Sorry Your Selection Is Not A Valid Difficulty`); playGame(start);
       }
       let guess;
       do {
