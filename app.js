@@ -36,12 +36,14 @@ function playGame(start) {
           alert(`${guess} is too low`);
         } else if (guess > rand) {
           alert(`${guess} is too high`);
+        } else if (isNaN(guess)) {
+          alert(`Guess a number please`);
         } else {
           alert(`${guess} IS CORRECT!`);
           console.log(
             `WAY TO GO YOU GUESSED THE NUMBER ${guess} YOU ARE SO SMART!`
           );
-        }
+        } 
       } while (rand != guess);
 
       again = prompt("Would You Like To Play Again? (yes or no)")
